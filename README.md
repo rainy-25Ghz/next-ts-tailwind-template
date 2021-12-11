@@ -1,3 +1,2 @@
-# next-ts-template-nbajnn
+# next-ts-tailwind-template
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/next-ts-template-nbajnn)
