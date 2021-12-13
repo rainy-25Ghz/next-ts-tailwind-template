@@ -6,6 +6,8 @@ import { Button } from "../components/Button";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
+import { Menu } from "../components/Menu";
+import { MenuItem } from "../components/MenuItem";
 
 // export const getStaticProps: GetStaticProps = async (context) => {
 //   // ...
@@ -23,13 +25,18 @@ export default function Home() {
     let router = useRouter();
     return (
         <div className="flex flex-col w-screen justify-center align-center">
-            <Drawer></Drawer>
+            <Menu>
+                <MenuItem>Select</MenuItem>
+                <MenuItem>Copy</MenuItem>
+                <MenuItem>Paste</MenuItem>
+            </Menu>
+            {/* <Drawer></Drawer>
 
             <Button
                 onClick={() => {
                     router.push("/white");
                 }}
-            ></Button>
+            ></Button> */}
         </div>
     );
 }
