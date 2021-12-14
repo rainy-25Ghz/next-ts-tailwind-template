@@ -50,7 +50,7 @@ a {
     display: block;
     position: relative;
 }
-.menu li div {
+.menu li .inner {
     border-radius: 5px;
     margin: 0 5px;
     color: var(--text-link);
@@ -61,4 +61,21 @@ a {
     padding: 6px 7px 6px 17px;
     pointer-events: none;
     white-space: pre;
+}
+.menu li:not(.disabled):not(.picked):not(.separator):hover {
+    animation: 0s menu-active-item;
+}
+.menu li:not(.disabled):not(.picked):not(.separator):hover,
+.menu li:not(.disabled):not(.picked):not(.separator).hover {
+    z-index: 2;
+}
+.menu li:not(.disabled):not(.picked):not(.separator):hover > .inner,
+.menu li:not(.disabled):not(.picked):not(.separator).hover > .inner {
+    background-color: var(--menu-active);
+    color: var(--menu-text-active);
+}
+.menu li:not(.disabled):not(.picked):not(.separator):hover > ul,
+.menu li:not(.disabled):not(.picked):not(.separator).hover > ul {
+    opacity: 1;
+    pointer-events: auto;
 }

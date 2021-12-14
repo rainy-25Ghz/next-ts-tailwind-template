@@ -5,7 +5,7 @@ import { Drawer } from "../components/Drawer";
 import { Button } from "../components/Button";
 import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import { Menu } from "../components/Menu";
 import { MenuItem } from "../components/MenuItem";
 
@@ -23,13 +23,21 @@ import { MenuItem } from "../components/MenuItem";
 
 export default function Home() {
     let router = useRouter();
+    const [toggle, setToggle] = useState(false);
     return (
         <div className="flex flex-col w-screen justify-center align-center">
-            <Menu>
-                <MenuItem>Select</MenuItem>
-                <MenuItem>Copy</MenuItem>
-                <MenuItem>Paste</MenuItem>
-            </Menu>
+            <button
+                onClick={() => {
+                    setToggle((toggle) => !toggle);
+                }}
+            >菜单</button>
+            {toggle && (
+                <Menu>
+                    <MenuItem>Select Component</MenuItem>
+                    <MenuItem>Copy</MenuItem>
+                    <MenuItem>Paste</MenuItem>
+                </Menu>
+            )}
             {/* <Drawer></Drawer>
 
             <Button
